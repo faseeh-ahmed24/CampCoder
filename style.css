@@ -31,50 +31,89 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: var(--bg-main);
     color: var(--text-main);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+}
+
+body.in-game-view {
+    height: 100vh;
     overflow: hidden;
 }
 
 /* ==========================================================================
-   TOP HEADER & AUTH BAR
+   TOP HEADER & NAVIGATION
    ========================================================================== */
 
 #app-header {
     background: #181924;
     border-bottom: 2px solid var(--border-color);
-    padding: 12px 24px;
+    padding: 10px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
     z-index: 20;
 }
 
-.logo-group {
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-mark {
+    background: #4CAF50;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 4px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.logo-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+}
+
+.main-nav {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo-icon {
-    font-size: 26px;
-}
-
-.logo-group h1 {
-    font-size: 22px;
-    letter-spacing: 0.5px;
-    color: #4CAF50;
-    margin: 0;
-}
-
-.logo-subtext {
-    font-size: 13px;
+.nav-link {
     color: var(--text-muted);
-    margin-left: 10px;
-    border-left: 1px solid var(--border-color);
-    padding-left: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background: #232536;
+}
+
+.nav-link.active {
+    color: #ffffff;
+    background: #26293d;
 }
 
 .auth-bar {
@@ -84,7 +123,7 @@ body {
 }
 
 #user-status-text {
-    font-size: 14px;
+    font-size: 13px;
     color: #b0b7cf;
     font-weight: 500;
 }
@@ -93,17 +132,16 @@ body {
     background: #2979FF;
     color: #ffffff;
     border: none;
-    border-radius: 6px;
-    padding: 8px 16px;
+    border-radius: 5px;
+    padding: 8px 15px;
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    transition: background 0.15s;
 }
 
 .header-btn:hover {
     background: #1565C0;
-    transform: translateY(-1px);
 }
 
 .header-btn.secondary-btn {
@@ -834,4 +872,288 @@ button:disabled {
     margin-top: 16px;
     text-align: center;
     line-height: 1.4;
+}
+
+/* ==========================================================================
+   HOMEPAGE STYLES (Clean, Educational, Student-Built)
+   ========================================================================== */
+
+.homepage-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--bg-main);
+}
+
+.section-container {
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 24px;
+}
+
+.home-section {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-alt {
+    background: #171822;
+}
+
+/* 1. Hero / Landing Section */
+.hero-section {
+    padding: 56px 0 44px 0;
+}
+
+.hero-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.hero-tagline {
+    font-size: 17px;
+    font-weight: 600;
+    color: #4CAF50;
+    margin-bottom: 14px;
+}
+
+.hero-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #b8bed2;
+    max-width: 640px;
+    margin-bottom: 24px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 0.5px;
+    text-align: center;
+    transition: background 0.15s;
+}
+
+.btn-primary {
+    background: #4CAF50;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #3e8e41;
+}
+
+.btn-secondary {
+    background: #2a2d3e;
+    color: #ffffff;
+    border: 1px solid #3d415d;
+}
+
+.btn-secondary:hover {
+    background: #35394e;
+}
+
+/* Headings & Text */
+.section-heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.section-text {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #c4c9dc;
+    max-width: 760px;
+}
+
+/* 3. How It Works (3 Steps) */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.step-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 18px;
+}
+
+.step-number {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4CAF50;
+    margin-bottom: 6px;
+}
+
+.step-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.step-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #a5acbf;
+}
+
+/* 4. What Students Learn (Concepts List) */
+.concepts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.concept-item {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid #2196F3;
+    border-radius: 3px;
+    padding: 12px 16px;
+}
+
+.concept-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.concept-description {
+    font-size: 13px;
+    color: #a5acbf;
+    line-height: 1.4;
+}
+
+/* 6. For Teachers */
+.teachers-subheading {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4CAF50;
+    margin-bottom: 8px;
+}
+
+/* 7. Footer */
+#site-footer {
+    background: #0f1015;
+    border-top: 1px solid var(--border-color);
+    padding: 28px 0;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.footer-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    #app-header {
+        padding: 10px 16px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .header-left {
+        gap: 14px;
+    }
+
+    .hero-section {
+        padding: 40px 0 30px 0;
+    }
+
+    .hero-title {
+        font-size: 26px;
+    }
+
+    .hero-tagline {
+        font-size: 15px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    #game-container {
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .palette, #workspace-panel {
+        width: 100%;
+    }
 }

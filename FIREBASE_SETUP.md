@@ -88,7 +88,7 @@ If you need to view your project:
 ---
 
 ## Step 5: Link Firebase to CampCoder Code
-1. Open [`js/firebase-config.js`](file:///c:/Users/eehfa/OneDrive/Desktop/CampCoder%20-%20Copy/js/firebase-config.js) in your text editor.
+1. Open [`js/firebase-config.js`] in your text editor.
 2. Replace the placeholder values with your actual project credentials from Step 2:
    ```javascript
    const firebaseConfig = {

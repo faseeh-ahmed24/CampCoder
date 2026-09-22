@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampCoder - Block Coding Puzzle Adventure</title>
+    <title>Camp Coder - Educational Programming Platform</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- TOP APPLICATION HEADER & AUTH BAR -->
+    <!-- TOP APPLICATION HEADER -->
     <header id="app-header">
-        <div class="logo-group">
-            <span class="logo-icon">🏕️</span>
-            <h1>CampCoder</h1>
-            <span class="logo-subtext">Learn to Code with Puzzles</span>
+        <div class="header-left">
+            <a href="#home" class="logo-link" id="nav-logo-link">
+                <span class="logo-mark">CC</span>
+                <span class="logo-title">Camp Coder</span>
+            </a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <a href="#home" class="nav-link active" id="nav-home-link">Home</a>
+                <a href="#play" class="nav-link" id="nav-play-link">Coding Challenges</a>
+            </nav>
         </div>
 
         <div class="auth-bar">
@@ -23,8 +28,134 @@
         </div>
     </header>
 
-    <!-- MAIN GAME AREA -->
-    <main id="game-container">
+    <!-- HOMEPAGE VIEW -->
+    <div id="homepage-view" class="homepage-view">
+        
+        <!-- SECTION 1: HERO / LANDING -->
+        <section class="home-section hero-section" aria-labelledby="hero-title">
+            <div class="section-container hero-container">
+                <h1 id="hero-title" class="hero-title">Camp Coder</h1>
+                <p class="hero-tagline">Learn to code by building, solving, and experimenting.</p>
+                <p class="hero-description">
+                    A block-based programming platform designed to help beginners build programming fundamentals and transition toward text-based programming.
+                </p>
+
+                <div class="hero-actions">
+                    <!-- Shown when user is logged out -->
+                    <button id="hero-login-btn" class="btn btn-primary" type="button">LOG IN</button>
+                    <button id="hero-guest-btn" class="btn btn-secondary" type="button">CONTINUE AS GUEST</button>
+
+                    <!-- Shown when user is already logged in -->
+                    <button id="hero-continue-btn" class="btn btn-primary" type="button" style="display: none;">CONTINUE LEARNING</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WHAT IS CAMP CODER? -->
+        <section class="home-section" aria-labelledby="about-title">
+            <div class="section-container">
+                <h2 id="about-title" class="section-heading">What is Camp Coder?</h2>
+                <p class="section-text">
+                    Camp Coder is a block-based programming platform designed to introduce students to programming concepts through interactive challenges. It helps bridge the gap between beginner visual programming tools and traditional text-based programming.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: HOW IT WORKS -->
+        <section class="home-section section-alt" aria-labelledby="how-it-works-title">
+            <div class="section-container">
+                <h2 id="how-it-works-title" class="section-heading">How it works</h2>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <span class="step-number">01</span>
+                        <h3 class="step-title">Choose a Level</h3>
+                        <p class="step-text">Start from the beginning or continue where you left off.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">02</span>
+                        <h3 class="step-title">Solve the Challenge</h3>
+                        <p class="step-text">Build programs using visual programming blocks.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">03</span>
+                        <h3 class="step-title">Learn & Progress</h3>
+                        <p class="step-text">Complete increasingly difficult challenges while developing programming fundamentals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: WHAT STUDENTS LEARN -->
+        <section class="home-section" aria-labelledby="curriculum-title">
+            <div class="section-container">
+                <h2 id="curriculum-title" class="section-heading">What students learn</h2>
+
+                <div class="concepts-list">
+                    <div class="concept-item">
+                        <h3 class="concept-name">Sequencing</h3>
+                        <p class="concept-description">Execute instructions in a logical, step-by-step order.</p>
+                    </div>
+
+                    <div class="concept-item">
+                        <h3 class="concept-name">Loops</h3>
+                        <p class="concept-description">Repeat instructions efficiently.</p>
+                    </div>
+
+                    <div class="concept-item">
+                        <h3 class="concept-name">Conditionals</h3>
+                        <p class="concept-description">Make decisions based on different conditions.</p>
+                    </div>
+
+                    <div class="concept-item">
+                        <h3 class="concept-name">Problem Solving</h3>
+                        <p class="concept-description">Break larger problems into smaller steps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: WHY WAS CAMP CODER CREATED? -->
+        <section class="home-section section-alt" aria-labelledby="why-created-title">
+            <div class="section-container">
+                <h2 id="why-created-title" class="section-heading">Why was Camp Coder created?</h2>
+                <p class="section-text">
+                    Camp Coder was created to make the transition from block-based programming to traditional programming easier for beginners. The levels gradually introduce programming concepts and increase in difficulty so students can build their understanding one step at a time.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 6: FOR TEACHERS -->
+        <section class="home-section" aria-labelledby="teachers-title">
+            <div class="section-container">
+                <h2 id="teachers-title" class="section-heading">For teachers</h2>
+                <h3 class="teachers-subheading">Built for programming education</h3>
+                <p class="section-text">
+                    Camp Coder provides structured programming challenges that instructors can use to introduce programming concepts and help students practice problem solving.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 7: FOOTER -->
+        <footer id="site-footer">
+            <div class="section-container footer-container">
+                <div class="footer-info">
+                    <p class="footer-title">Camp Coder</p>
+                    <p class="footer-desc">An educational block-based coding platform created by Faseeh Ahmed to teach programming fundamentals.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/faseeh-ahmed24/CampCoder---Copy" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Repository</a>
+                    <a href="#play" class="footer-link">Start Coding</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- MAIN GAME / CODING CHALLENGES AREA -->
+    <main id="game-container" style="display: none;">
         
         <!-- PANEL 1: BLOCK PALETTE -->
         <section class="panel palette" aria-label="Block Palette">
@@ -124,13 +255,12 @@
             </form>
 
             <div class="modal-footer-note">
-                💡 Tip: You can also play immediately as a Guest. Guest progress is stored in your browser.
+                Tip: You can also play immediately as a Guest. Guest progress is stored in your browser.
             </div>
         </div>
     </div>
 
     <!-- FIREBASE COMPAT WEB SDK (v10) -->
-    <!-- These official scripts provide Firebase Auth & Firestore in pure vanilla JS -->
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>

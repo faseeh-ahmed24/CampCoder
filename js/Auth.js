@@ -270,7 +270,7 @@ class AuthManager {
     }
 
     /**
-     * Updates the header UI to show the logged-in user's username.
+     * Updates the header UI and homepage hero buttons to show the logged-in user's username.
      * 
      * @param {string} username The username of the current user.
      */
@@ -284,10 +284,13 @@ class AuthManager {
         if (this.logoutButtonElement) {
             this.logoutButtonElement.style.display = "inline-block";
         }
+
+        // Update homepage hero buttons to show "CONTINUE LEARNING"
+        this.updateHeroButtons(true);
     }
 
     /**
-     * Updates the header UI to show the Guest state.
+     * Updates the header UI and homepage hero buttons to show the Guest state.
      */
     updateHeaderUIForGuest() {
         if (this.userStatusTextElement) {
@@ -298,6 +301,42 @@ class AuthManager {
         }
         if (this.logoutButtonElement) {
             this.logoutButtonElement.style.display = "none";
+        }
+
+        // Update homepage hero buttons to show "LOG IN" and "CONTINUE AS GUEST"
+        this.updateHeroButtons(false);
+    }
+
+    /**
+     * Updates the hero action buttons on the homepage based on user login state.
+     * 
+     * @param {boolean} isLoggedIn True if logged in, false if guest.
+     */
+    updateHeroButtons(isLoggedIn) {
+        const heroLoginButton = document.getElementById("hero-login-btn");
+        const heroGuestButton = document.getElementById("hero-guest-btn");
+        const heroContinueButton = document.getElementById("hero-continue-btn");
+
+        if (isLoggedIn) {
+            if (heroLoginButton) {
+                heroLoginButton.style.display = "none";
+            }
+            if (heroGuestButton) {
+                heroGuestButton.style.display = "none";
+            }
+            if (heroContinueButton) {
+                heroContinueButton.style.display = "inline-block";
+            }
+        } else {
+            if (heroLoginButton) {
+                heroLoginButton.style.display = "inline-block";
+            }
+            if (heroGuestButton) {
+                heroGuestButton.style.display = "inline-block";
+            }
+            if (heroContinueButton) {
+                heroContinueButton.style.display = "none";
+            }
         }
     }
 
